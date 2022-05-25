@@ -1,0 +1,22 @@
+CREATE TABLE Baby_Supplies (ID INTEGER PRIMARY KEY, Department TEXT, Name TEXT, Quantity INTEGER, Price INTEGER);
+
+INSERT INTO Baby_Supplies VALUES (1, "Comfort", "Teether", 3, 6);
+INSERT INTO Baby_Supplies VALUES (2, "Clothing", "Bibs", 15, 3);
+INSERT INTO Baby_Supplies VALUES (3, "Clothing", "Burp Clothes", 24, 4);
+INSERT INTO Baby_Supplies VALUES (4, "Comfort", "Pacifers", 9, 4);
+INSERT INTO Baby_Supplies VALUES (5, "Nourishment", "Bottles", 17, 1);
+INSERT INTO Baby_Supplies VALUES (6, "Nourishment", "SippyCup", 9, 1);
+INSERT INTO Baby_Supplies VALUES (7, "Clothing", "Baby Mittens", 12, 4);
+INSERT INTO Baby_Supplies VALUES (8, "Nourishment", "Bottle Nipples", 20, 1);
+INSERT INTO Baby_Supplies VALUES (9, "Nourishment", "Bottle Liners", 20, 2);
+INSERT INTO Baby_Supplies VALUES (10, "Clothing", "Onesies", 34, 5);
+INSERT INTO Baby_Supplies VALUES (11, "Clothing", "Rompers", 22, 5);
+INSERT INTO Baby_Supplies VALUES (12, "Clothing", "Shoes", 15, 7);
+INSERT INTO Baby_Supplies VALUES (13, "Nourishment", "Bottle Warmer", 4, 2);
+INSERT INTO Baby_Supplies VALUES (14, "Clothing", "Socks", 15, 7);
+INSERT INTO Baby_Supplies VALUES (15, "Comfort", "Pacifier Leash", 4, 4);
+INSERT INTO Baby_Supplies VALUES (16, "Nourishment", "Formula", 47, 2);
+
+SELECT * FROM Baby_Supplies ORDER BY Department;
+
+SELECT ID, SUM(Quantity) FROM Baby_Supplies
