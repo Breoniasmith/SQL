@@ -1,0 +1,52 @@
+/* Create table to provide information about your favorite musicians*/
+CREATE TABLE Artists (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT,
+    Age INTEGER,
+    Location TEXT);
+    
+INSERT INTO Artists (Name, Age, Location) VALUES ("Lizzo", "34", "California");
+INSERT INTO Artists (Name, Age, Location) VALUES ("Childish Gambino", "38", "California");
+INSERT INTO Artists (Name, Age, Location) VALUES ("Beyonce", "40", "California");
+INSERT INTO Artists (Name, Age, Location) VALUES ("Miguel", "38", "California");
+INSERT INTO Artists (Name, Age, Location) VALUES ("Bruno Mars", "36", "California");
+INSERT INTO Artists (Name, Age, Location) VALUES ("Chance The Rapper","29", "Illinois");
+
+CREATE TABLE Hits (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT,
+    Top_Album TEXT,
+    Release TEXT);
+    
+INSERT INTO Hits (Name, Top_Album, Release) VALUES ("Lizzo", "Cuz I Love You", "2019");
+INSERT INTO Hits (Name, Top_Album, Release) VALUES ("Childish Gambino", "Because of the Internet", "2013");
+INSERT INTO Hits (Name, Top_Album, Release) VALUES ("Beyonce", "Formation", "2016");
+INSERT INTO Hits (Name, Top_Album, Release) VALUES ("Miguel", "All I Want Is You", "2010");
+INSERT INTO Hits (Name, Top_Album, Release) VALUES ("Bruno Mars", "Doo-Wops & Hooligans", "2010");
+INSERT INTO Hits (Name, Top_Album, Release) VALUES ("Chance The Rapper", "Coloring Book", "2016");
+
+CREATE TABLE Born (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT,
+    City TEXT,
+    State TEXT);
+
+INSERT INTO Born (Name, City, State) VALUES ("Lizzo", "Detroit", "Michigan");
+INSERT INTO Born (Name, City, State) VALUES ("Childish Gambino", "Edwards Air Force Base", "California");
+INSERT INTO Born (Name, City, State) VALUES ("Beyonce", "Houston", "Texas");
+INSERT INTO Born (Name, City, State) VALUES ("Miguel", "San Pedro", "California");
+INSERT INTO Born (Name, City, State) VALUES ("Bruno Mars", "Honolulu", "Hawaii");
+INSERT INTO Born (Name, City, State) VALUES ("Chance The Rapper", "Chicago", "Illinois");
+
+/*Using JOIN, this table displays each artist along with their age and birth place.*/
+
+SELECT Artists.Name, Artists.Age, Born.State
+FROM Artists
+JOIN Born
+ON Artists.Name = Born.Name;
+
+/*Using JOIN, this table combines "Artists" and "Hits" to show each artists top albums*/
+SELECT Artists.Name, Artists.Age, Artists.Location, Hits.Top_Album, Hits.Release
+FROM Artists
+JOIN Hits
+ON Artists.Name = Hits.Name;
